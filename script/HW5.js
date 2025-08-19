@@ -20,21 +20,22 @@
     Вишліть посилання на вашу гілку
 */
 
-let odinica = "км";
+let odinica = "год";
 let chislo = 15;
+let result = '';
 
 switch (odinica){
     case "км":
-        var result = chislo * 1000;
-        console.log(chislo+" "+odinica+" це "+result+" метрів");
+        result = chislo * 1000;
+        console.log(`${chislo} ${odinica} це ${result} м.`);
         break;
     case "кг":
-        var result = chislo * 1000;
-        console.log(chislo+" "+odinica+" це "+result+"  грам");
+        result = chislo * 1000;
+        console.log(`${chislo} ${odinica} це ${result} гр.`);
         break;
     case "год":
-        var result = chislo * 60;
-        console.log(chislo+" "+odinica+" це "+result+"  хвилин");
+        result = chislo * 60;
+        console.log(`${chislo} ${odinica} це ${result} хв.`);
         break;
     default:
         console.log("Покищо невідома одиниця виміру");
