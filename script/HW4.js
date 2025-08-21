@@ -22,10 +22,10 @@ if (age != +age){
     console.log("ІДИ ЗВІДСИ, БРЕХЛО!");
 }else if(+age >= 150){
     console.log("Вітаю тебе, довгожитель!")
-}else if(+age%10 == 1 && +age!=11 && +age%100 != 11){
-    console.log(`Тобі ${age} рік!`+age%10);
+}else if(+age%10 == 1 && +age%100 != 11){
+    console.log(`Тобі ${age} рік!`);
 }else if(+age%10>=2 && +age%10<=4 && !([12, 13, 14].includes(+age % 100))){
-    console.log(`Тобі ${age} роки!`+age%10)
+    console.log(`Тобі ${age} роки!`)
 }else{
-    console.log(`Тобі ${age} років!`+age%10)
+    console.log(`Тобі ${age} років!`)
 }
