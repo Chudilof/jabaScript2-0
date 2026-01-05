@@ -23,24 +23,23 @@ drawTriangle(5, '*');
 */
 
 
-drawTriangle (5, '/');
-drawTriangle2 (5, '0');
+drawTriangle (3, '/');
+drawTriangle2 (10, '0');
 
-function drawTriangle (size, simbol) {
-    let i = 0;
-    let j = simbol;
-    for (let i = 0; i <= size; i++){
+function drawTriangle (size, symbol) {
+    let j = symbol;
+    for (let i = 0; i < size; i++){
         console.log(j);
-        j = j+simbol;
+        j = j+symbol;
     }
 }
 
-function drawTriangle2 (size, simbol) {
+function drawTriangle2 (size, symbol) {
     let i = 0;
-    let j = simbol;
-    while (i<=size){
+    let j = symbol;
+    while (i<size){
         console.log(j);
-        j = j+simbol;
+        j = j+symbol;
         i++;
     }
 }

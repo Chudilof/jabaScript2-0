@@ -15,25 +15,20 @@
 Вишліть посилання вашу гілку
 */
 
-pow(2,4);
+pow(3,3);
 
 function pow (number,step){
     let i = 1;
     let res = number;
-    for(;;){
         if(step==0){
-            console.log(number/number);
-            break;
+            console.log('1');
         }else if(step==1){
-            console.log(number*step);
-            break;
+            console.log(number);
         }else{
             while(i!=step){
                 res = res * number;
                 console.log(res);
                 i++;
-            }
-        break;
         }
-    }   
+    }  
 }
