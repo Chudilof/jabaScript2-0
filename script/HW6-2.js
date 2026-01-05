@@ -17,17 +17,17 @@
 
 pow(3,3);
 
-function pow (number,step){
+function pow (number,degree){
     let i = 1;
-    let res = number;
-        if(step==0){
+    let result = number;
+        if(degree==0){
             console.log('1');
-        }else if(step==1){
+        }else if(degree==1){
             console.log(number);
         }else{
-            while(i!=step){
-                res = res * number;
-                console.log(res);
+            while(i!=degree){
+                result = result * number;
+                console.log(result);
                 i++;
         }
     }  
