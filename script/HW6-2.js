@@ -15,20 +15,22 @@
 Вишліть посилання вашу гілку
 */
 
-pow(3,3);
+let number = pow(5,2);
 
 function pow (number,degree){
-    let i = 1;
     let result = number;
         if(degree==0){
-            console.log('1');
+            return (1);
         }else if(degree==1){
-            console.log(number);
+            return (number);
         }else{
-            while(i!=degree){
+            let i = 1;
+            while(i<degree){
                 result = result * number;
-                console.log(result);
                 i++;
         }
+        return (result);
     }  
 }
+
+console.log (number);
