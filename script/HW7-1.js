@@ -24,10 +24,15 @@ var game = {
     genre : "shuter",
     platform : "PC",
     getInfo : function (){
-        console.log (game);
+        for (let key in this){
+            if (typeof this[key] != 'function') {
+                console.log (key + ': ' + this[key])
+            }
+        }
     }
 };
 
 game.getInfo();
+console.log("ДОДАЄМО ВЛАСТИВІСТЬ".padStart(100,'-'));
 game.age = "99+";
 game.getInfo();
