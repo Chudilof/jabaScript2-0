@@ -17,3 +17,17 @@ obj.getInfo(); // Виводить всі властивості, включаю
 Створіть гілку js_homework5.
 Додайте туди ваше домашне завдання
 Вислати вашу гілку*/
+
+
+var game = {
+    name : "Tetris",
+    genre : "shuter",
+    platform : "PC",
+    getInfo : function (){
+        console.log (game);
+    }
+};
+
+game.getInfo();
+game.age = "99+";
+game.getInfo();
