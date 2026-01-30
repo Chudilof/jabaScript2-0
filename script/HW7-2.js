@@ -25,7 +25,7 @@ var services = {
     "Миття голови": "100 грн",
     getInfo : function (){
         for (let key in this){
-            if (typeof this[key] != 'function') {
+            if (typeof this[key] !== 'function') {
                 console.log (key + ': ' + this[key])
             }
         }
@@ -34,28 +34,28 @@ var services = {
     price : function (){
         let totalPrice = 0;
             for (let key in this){
-                if (typeof this[key] != 'function') {
+                if (typeof this[key] !== 'function') {
                     totalPrice = totalPrice + (Number.parseFloat(this[key]))
                 }
             };
-        return "Загальна вартість послуг: " + totalPrice + "грн.";
+        return "Загальна вартість послуг: " + totalPrice + " грн.";
     },
     //мінімальна ціна послуги
     minPrice : function (){
-        let minValue = 0;
+        let minValue = null;
         let service
         for (let key in this){
             let value = Number.parseFloat(this[key]);
-            if (minValue == 0 || minValue > value){
+            if (minValue == null || minValue > value){
                 minValue = value;
                 service = key;
             }
         };
-        return "Мінімальна ціна послуги становить: " + minValue + 'грн. - ' + service        
+        return "Мінімальна ціна послуги становить: " + minValue + ' грн. - ' + service        
     },
     //максимальна ціна послуги
     maxPrice : function (){
-        let maxValue = 0;
+        let maxValue = null;
         let service
         for (let key in this){
             let value = Number.parseFloat(this[key]);
@@ -64,7 +64,7 @@ var services = {
                 service = key;
             }
         };
-        return "Максимальна ціна послуги становить: " + maxValue + 'грн. - ' + service
+        return "Максимальна ціна послуги становить: " + maxValue + ' грн. - ' + service
         
     }
 };
