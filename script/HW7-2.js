@@ -20,8 +20,8 @@ services['Розбити скло'] = "200 грн";
 Вислати вашу гілку*/
 
 var services = {
-    "стрижка": "60 грн",
-    "гоління": "80 грн",
+    "стрижка": "10 грн",
+    "гоління": "50 грн",
     "Миття голови": "100 грн",
     getInfo : function (){
         for (let key in this){
@@ -32,10 +32,10 @@ var services = {
     },
     //сума послуг
     price : function (){
-        let totalPrice = 0;
+        let totalPrice = null;
             for (let key in this){
-                if (typeof this[key] !== 'function') {
-                    totalPrice = totalPrice + (Number.parseFloat(this[key]))
+                if (typeof this[key] !== 'function' && (!isNaN(Number.parseFloat(this[key])))) {
+                    totalPrice = totalPrice + Number.parseFloat(this[key])
                 }
             };
         return "Загальна вартість послуг: " + totalPrice + " грн.";
@@ -46,10 +46,13 @@ var services = {
         let service
         for (let key in this){
             let value = Number.parseFloat(this[key]);
-            if (minValue == null || minValue > value){
+            if (!isNaN(value)){
+                if (minValue == null || minValue > value){
                 minValue = value;
                 service = key;
+                }
             }
+            
         };
         return "Мінімальна ціна послуги становить: " + minValue + ' грн. - ' + service        
     },
@@ -59,9 +62,11 @@ var services = {
         let service
         for (let key in this){
             let value = Number.parseFloat(this[key]);
-            if (maxValue < value){
-                maxValue = value;
-                service = key;
+            if (!isNaN(value)){
+                if (maxValue < value){
+                    maxValue = value;
+                    service = key;
+                }
             }
         };
         return "Максимальна ціна послуги становить: " + maxValue + ' грн. - ' + service
@@ -76,6 +81,7 @@ console.log(services.minPrice()); //мінімальна ціна до дода�
 console.log(services.maxPrice ()) //максимальна ціна до додавання послуги
 console.log("ДОДАЄМО ПОСЛУГУ".padStart(100,'-'));
 services['Розбити скло'] = "200 грн"; //Додавання послуги
+services['Запитати'] = "безкоштовно"; //Додавання безкоштовної послуги
 services.getInfo();
 console.log(services.price()); //загальний прайс після додавання послуги
 console.log(services.minPrice()); //мінімальна ціна після додавання сервісу
