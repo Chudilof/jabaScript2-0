@@ -109,18 +109,18 @@ const company = {
 function findValueByKey(Obj, companyName) {
     //перевіряємо об'єкт чи відповідає ім'я запиту та виводимо об'єкт
     for (let key in Obj) {
-        if (typeof Obj[key] === "string" && Obj[key].toLowerCase() === companyName.toLowerCase()) {
+        if (key === "name" && typeof Obj[key] === "string" && Obj[key].toLowerCase() === companyName.toLowerCase()) {
             return Obj
         }
 
         //якщо не відопвідає, шукаємо наявні субкомпанії
         else if (Array.isArray(Obj[key]) && Obj[key].length > 0) {
             //якщо субкомпанії є, розкриваємо масив і перевизначаємо об'єкт пошуку
-            let company1 = Obj[key];
+            let subCompany = Obj[key];
 
             //звертаємось до фінкції для пошуку по субкомпаніям
-            for (let i = 0; i < company1.length; i++) {
-                let result = findValueByKey(company1[i], companyName);
+            for (let i = 0; i < subCompany.length; i++) {
+                let result = findValueByKey(subCompany[i], companyName);
                 if (result !== null) {
                     return result
                 }
