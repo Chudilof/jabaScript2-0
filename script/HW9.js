@@ -50,6 +50,21 @@ var arr = [
         email: "dmitro.porohov@yahoo.com"
     },
     {
+        userName: "Bohdan",
+        lastName: "Stupka",
+        email: "stuparik@gmail.com"
+    },
+    {
+        userName: "Egor",
+        lastName: "Kolovorot",
+        email: "vorotta@ukr.net"
+    },
+    {
+        userName: "Stefania",
+        lastName: "Pisnja",
+        email: "5t3fan19@gmail.com"
+    },
+    {
         userName: "Andrii",
         lastName: "",
         email: "andrii@mail.ru" // Нам такі не підходять
@@ -58,10 +73,10 @@ var arr = [
 
 function validation(importValue) {
     let validAccount = [];
-    let regValues = /^\w+.?\w+@(gmail.com|yahoo.com)$/;
+    let regValues = /^\w+(\.\w+)*@(gmail\.com|yahoo\.com)$/; //скількись символів або цифр (можливо крапка з подальшим текстом) @ домен крапка ком.
     for (i = 0; i < importValue.length; i++) {
         if (regValues.test(importValue[i].email)) {
-            validAccount[i] = importValue[i];
+            validAccount.push(importValue[i]);
         }
     }
     return validAccount;
