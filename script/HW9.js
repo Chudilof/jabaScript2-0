@@ -74,7 +74,7 @@ var arr = [
 function validation(importValue) {
     let validAccount = [];
     let regValues = /^\w+(\.\w+)*@(gmail\.com|yahoo\.com)$/; //скількись символів або цифр (можливо крапка з подальшим текстом) @ домен крапка ком.
-    for (i = 0; i < importValue.length; i++) {
+    for (let i = 0; i < importValue.length; i++) {
         if (regValues.test(importValue[i].email)) {
             validAccount.push(importValue[i]);
         }
@@ -83,7 +83,7 @@ function validation(importValue) {
 }
 
 let result = validation(arr);
-for (i=0;i<result.length;i++){
+for (let i=0;i<result.length;i++){
     console.log(result[i]);
 }
 // console.log(arr);
